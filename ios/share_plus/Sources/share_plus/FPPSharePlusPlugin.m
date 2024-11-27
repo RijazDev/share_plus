@@ -198,42 +198,42 @@ TopViewControllerForViewController(UIViewController *viewController) {
     API_AVAILABLE(macos(10.15), ios(13.0), watchos(6.0)) {
   LPLinkMetadata *metadata = [[LPLinkMetadata alloc] init];
 
-  if ([_subject length] > 0) {
-    metadata.title = _subject;
-  } else if ([_text length] > 0) {
+//  if ([_subject length] > 0) {
+    /*metadata*/.title = _subject;
+//  } else if ([_text length] > 0) {
     metadata.title = _text;
-  }
+//  }
 
-  if (_path) {
-    NSString *extesnion = [_path pathExtension];
-
-    unsigned long long rawSize = (
-        [[[NSFileManager defaultManager] attributesOfItemAtPath:_path
-                                                          error:nil] fileSize]);
-    NSString *readableSize = [NSByteCountFormatter
-        stringFromByteCount:rawSize
-                 countStyle:NSByteCountFormatterCountStyleFile];
-
-    NSString *description = @"";
-
-    if (![extesnion isEqualToString:@""]) {
-      description =
-          [description stringByAppendingString:[extesnion uppercaseString]];
-      description = [description stringByAppendingString:@" • "];
-      description = [description stringByAppendingString:readableSize];
-    } else {
-      description = [description stringByAppendingString:readableSize];
-    }
+//  if (_path) {
+//    NSString *extesnion = [_path pathExtension];
+//
+//    unsigned long long rawSize = (
+//        [[[NSFileManager defaultManager] attributesOfItemAtPath:_path
+//                                                          error:nil] fileSize]);
+//    NSString *readableSize = [NSByteCountFormatter
+//        stringFromByteCount:rawSize
+//                 countStyle:NSByteCountFormatterCountStyleFile];
+//
+//    NSString *description = @"";
+//
+//    if (![extesnion isEqualToString:@""]) {
+//      description =
+//          [description stringByAppendingString:[extesnion uppercaseString]];
+//      description = [description stringByAppendingString:@" • "];
+//      description = [description stringByAppendingString:readableSize];
+//    } else {
+//      description = [description stringByAppendingString:readableSize];
+//    }
 
     // https://stackoverflow.com/questions/60563773/ios-13-share-sheet-changing-subtitle-item-description
-    metadata.originalURL = [NSURL fileURLWithPath:description];
-    if (_mimeType && [_mimeType hasPrefix:@"image/"]) {
-      UIImage *image = [UIImage imageWithContentsOfFile:_path];
-      metadata.imageProvider = [[NSItemProvider alloc]
-          initWithObject:[self imageWithImage:image
-                                 scaledToSize:CGSizeMake(120, 120)]];
-    }
-  }
+//    metadata.originalURL = [NSURL fileURLWithPath:description];
+//    if (_mimeType && [_mimeType hasPrefix:@"image/"]) {
+//      UIImage *image = [UIImage imageWithContentsOfFile:_path];
+//      metadata.imageProvider = [[NSItemProvider alloc]
+//          initWithObject:[self imageWithImage:image
+//                                 scaledToSize:CGSizeMake(120, 120)]];
+//    }
+//  }
 
   return metadata;
 }
