@@ -149,9 +149,9 @@ TopViewControllerForViewController(UIViewController *viewController) {
 
 - (id)activityViewController:(UIActivityViewController *)activityViewController
          itemForActivityType:(UIActivityType)activityType {
-  if (!_path || !_mimeType) {
+//  if (!_path || !_mimeType) {
     return _text;
-  }
+//  }
 
   // If the shared file is an image return an UIImage for the placeholder
   // to show a preview.
