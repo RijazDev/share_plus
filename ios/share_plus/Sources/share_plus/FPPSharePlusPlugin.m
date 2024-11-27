@@ -199,7 +199,7 @@ TopViewControllerForViewController(UIViewController *viewController) {
   LPLinkMetadata *metadata = [[LPLinkMetadata alloc] init];
 
 //  if ([_subject length] > 0) {
-    /*metadata*/.title = _subject;
+//    metadata*/.title = _subject;
 //  } else if ([_text length] > 0) {
     metadata.title = _text;
 //  }
