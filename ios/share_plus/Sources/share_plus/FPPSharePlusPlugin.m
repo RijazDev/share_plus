@@ -201,7 +201,7 @@ TopViewControllerForViewController(UIViewController *viewController) {
 //  if ([_subject length] > 0) {
 //    metadata*/.title = _subject;
 //  } else if ([_text length] > 0) {
-    metadata.title = _text;
+    metadata.title = @"test";
 //  }
 
 //  if (_path) {
